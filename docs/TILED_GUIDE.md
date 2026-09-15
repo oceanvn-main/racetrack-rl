@@ -2,6 +2,8 @@
 
 This guide explains how to design custom racetrack environments visually using the open-source **[Tiled Map Editor](https://www.mapeditor.org/)**.
 
+![Tiled Map Editor Interface](../assets/tiled_editor_example.png)
+
 ---
 
 ## 🛠️ Setup & Prerequisites
