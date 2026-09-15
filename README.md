@@ -210,4 +210,4 @@ weights and evaluation routes matched exactly on those runs. Regression tests
 also exercise a registered real learner that hides all internal tables, to
 verify evaluation and checkpoint orchestration use only the public contract.
 
-See map assets under `maps/` and `ocean_rl/data/maps/` for custom racetrack formats and Tiled `.tmj` layout definitions.
+See [docs/TILED_GUIDE.md](docs/TILED_GUIDE.md) for step-by-step instructions on designing custom racetrack maps with Tiled. Map assets are located under `maps/tiled/` and `ocean_rl/data/maps/`.
