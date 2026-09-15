@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocean-rl"
+version = "0.1.0"
+description = "Readable tabular reinforcement learning with configurable racetrack environments"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+images = ["Pillow>=10"]
+plots = ["matplotlib>=3.7"]
+gym = ["gymnasium>=0.29"]
+dev = ["Pillow>=10", "matplotlib>=3.7", "gymnasium>=0.29", "build>=1", "ruff>=0.9"]
+
+[project.scripts]
+ocean-rl = "ocean_rl.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ocean_rl*"]
+
+[tool.setuptools.package-data]
+ocean_rl = ["data/maps/*.map", "data/maps/*.json", "algorithms/monte_carlo/*.meta.json"]
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]

@@ -1,0 +1,28 @@
+{
+  "id": "OffPolicyMCAgent",
+  "display_name": "Off-policy Monte Carlo control",
+  "short_description": "Sparse episodic control using weighted importance sampling and recorded behavior probabilities.",
+  "category": "Reinforcement learning",
+  "textbook": {"reference": "Sutton and Barto, Reinforcement Learning: An Introduction, second edition", "section": "Chapter 5, Exercise 5.12", "equations": ["5.7"]},
+  "pedagogy": {
+    "motivation": "Learn how to reach a finish efficiently while exploring acceleration actions.",
+    "assumptions": ["Finite discrete states and actions", "Behavior covers all valid actions", "Each map is trained separately", "Truncated episodes are silently skipped — no Q-update is made; the episode is still recorded in training_history"],
+    "data_model": "A trajectory records state, action, reward and its generating behavior probability.",
+    "what_is_missing": "The expected return of each action and the greedy policy.",
+    "how_it_solves": "Sweep completed episodes backward, form returns, update a weighted mean and improve the deterministic greedy target. Stop the sweep when the recorded action differs from the improved target."
+  },
+  "SymbolicLatex": "Q(s,a) \\leftarrow Q(s,a) + \\frac{W}{C(s,a)}[G-Q(s,a)]",
+  "Symbols": [{"Symbol": "Q", "Description": "Action value"}, {"Symbol": "s", "Description": "State"}, {"Symbol": "a", "Description": "Action"}, {"Symbol": "W", "Description": "Importance weight"}, {"Symbol": "C", "Description": "Cumulative importance weight"}, {"Symbol": "G", "Description": "Discounted return"}],
+  "equations": {"update": {"label": "Weighted mean", "latex": "Q(s,a) \\leftarrow Q(s,a) + \\frac{W}{C(s,a)}[G-Q(s,a)]", "description": "Cumulative weights are stored in the log domain to prevent overflow."}},
+  "parameters": [
+    {"name": "gamma", "latex_symbol": "\\gamma", "default": "1.0", "description": "Discount factor", "effect": "Smaller values emphasize earlier rewards."},
+    {"name": "epsilon", "latex_symbol": "\\epsilon", "default": "0.1", "description": "Exploration probability", "effect": "Larger values explore more."},
+    {"name": "init_q", "latex_symbol": "Q_0", "default": "-1000.0", "description": "Initial value for unseen states", "effect": "Changes the initial exploration incentives."},
+    {"name": "seed", "latex_symbol": "", "default": "None", "description": "Agent random seed", "effect": "Makes action sampling reproducible."}
+  ],
+  "complexity": {"training": "O(T A) per episode excluding environment traversal", "prediction": "O(A)", "memory": "O(S_visited A + T)"},
+  "strengths": ["Readable tabular updates", "No map layout assumptions", "Stable log weights"],
+  "weaknesses": ["Needs completed episodes for Q-value updates", "High variance and slow exploration on maze-like or obstacle-dense tracks", "If all episodes are truncated, raises EpisodeTruncatedError with a clear message", "No transfer to unseen maps"],
+  "when_to_use": "Small to medium discrete racetracks for studying episodic off-policy control.",
+  "references": ["Sutton and Barto (2018), Chapter 5"]
+}

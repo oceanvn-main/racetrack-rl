@@ -1,0 +1,8 @@
+include CONTRIBUTING.md
+include exp_multi_map_racetrack.py offpolicy_mc_racetrack.py racetrack_env.py racetrack_maps.py tiled_maps.py import_dot_map.py
+recursive-include tools *.py
+recursive-include tests *.py
+include maps/track_1.map maps/track_1.json maps/house.map maps/house.json maps/maze.map maps/maze.json
+include maps/harbor_bend.map maps/harbor_bend.json
+recursive-include maps/tiled *.tmj *.tsj *.png
+recursive-include configs *.json

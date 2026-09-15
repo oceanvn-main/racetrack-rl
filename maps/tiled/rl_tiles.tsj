@@ -1,0 +1,56 @@
+{
+  "type": "tileset",
+  "version": "1.10",
+  "name": "RL tiles: Wall, Floor, Start, Finish",
+  "tilewidth": 32,
+  "tileheight": 32,
+  "tilecount": 4,
+  "columns": 4,
+  "margin": 0,
+  "spacing": 0,
+  "image": "rl_tiles.png",
+  "imagewidth": 128,
+  "imageheight": 32,
+  "tiles": [
+    {
+      "id": 0,
+      "properties": [
+        {
+          "name": "cell_type",
+          "type": "int",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "properties": [
+        {
+          "name": "cell_type",
+          "type": "int",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "properties": [
+        {
+          "name": "cell_type",
+          "type": "int",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "properties": [
+        {
+          "name": "cell_type",
+          "type": "int",
+          "value": 3
+        }
+      ]
+    }
+  ]
+}

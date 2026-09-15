@@ -1,0 +1,10 @@
+{
+  "map": "house.map",
+  "name": "house",
+  "environment": {
+    "movement_mode": "bidirectional",
+    "max_velocity": 4,
+    "fail_prob": 0.1,
+    "max_episode_steps": 10000
+  }
+}

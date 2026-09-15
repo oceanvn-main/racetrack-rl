@@ -1,0 +1,10 @@
+{
+  "map": "harbor_bend.map",
+  "name": "Harbor Bend",
+  "environment": {
+    "movement_mode": "forward-only",
+    "max_velocity": 5,
+    "fail_prob": 0.1,
+    "max_episode_steps": 100000
+  }
+}

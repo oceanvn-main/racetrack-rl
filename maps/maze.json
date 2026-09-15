@@ -1,0 +1,10 @@
+{
+  "map": "maze.map",
+  "name": "maze",
+  "environment": {
+    "movement_mode": "bidirectional",
+    "max_velocity": 3,
+    "fail_prob": 0.1,
+    "max_episode_steps": 10000
+  }
+}
