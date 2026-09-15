@@ -103,7 +103,6 @@ when discounting would change the intended objective. New physical quantities
 In PowerShell:
 
 ```powershell
-cd "C:\Ocean Library\Matlab code practice\Experiments\Scripts\RL\Python"
 py -3.12 -m ocean_rl --algorithm off-policy-mc --maps maps/tiled/harbor_bend.tmj --episodes 1000 --plot --show
 ```
 
@@ -211,5 +210,4 @@ weights and evaluation routes matched exactly on those runs. Regression tests
 also exercise a registered real learner that hides all internal tables, to
 verify evaluation and checkpoint orchestration use only the public contract.
 
-See [Tiled instructions](../../../../docs/recipes/tiled_racetrack.md) and
-[map import instructions](../../../../docs/recipes/racetrack_maps.md).
+See map assets under `maps/` and `ocean_rl/data/maps/` for custom racetrack formats and Tiled `.tmj` layout definitions.
