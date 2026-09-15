@@ -185,10 +185,6 @@ Continuous-control, image observations and vectorized environments should have
 contracts suited to those inputs; they are not automatically supported by the
 current tabular MC learner.
 
-In MATLAB the analogous extension points already exist in
-`+OceanStats/+RL/+MonteCarlo/IEpisodeEnvironment.m` and its strategy folders.
-Python and MATLAB use separate language implementations; no bridge is implied.
-
 ## Current MC limitations
 
 The current learner skips updates for truncated episodes and continues trying.
